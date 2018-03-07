@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 
+//Tool for calculating player ELO for SMA tournaments
 public class Player {
 
     private String name;
