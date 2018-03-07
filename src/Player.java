@@ -42,7 +42,7 @@ public class Player {
         this.gamesLost = 0;
         bestRank = assFactor;
         legacyFactor = new ArrayList<Double>();
-        
+
     }
 
     public String getName() {
@@ -76,22 +76,23 @@ public class Player {
     public void updateRating(double Ropp) {
 
         double newRank;
+            if(gamesPlayed >= 8) {
+                newRank = this.assFactor + calculateK() * (calculateS() - calculateE(Ropp));
 
-        if(this.gamesPlayed >= 8) {
+                if (newRank > bestRank) {
+                    bestRank = newRank;
+                    if (bestRank - 200 > 100 && bestRank - 200 < 1400) {
+                        skillFloor = 100;
+                    }
+                }
 
-            newRank = this.assFactor + calculateK() * (calculateS() - calculateE(Ropp));
 
-            if (newRank > bestRank) {
-                bestRank = newRank;
-                if (bestRank - 200 > 100 && bestRank - 200 < 1400) {
-                    skillFloor = 100;
+                this.assFactor = newRank;
+
+                if (assFactor != 1000) {
+                    legacyFactor.add(this.assFactor);
                 }
             }
-            this.assFactor = newRank;
-        }
-
-        legacyFactor.add(this.assFactor);
-
     }
 
     public void gameWon() {
@@ -111,8 +112,11 @@ public class Player {
     public void resetTournament(double Ravg) {
 
         if(gamesPlayed < 8) {
-            double newRank = (gamesPlayed * assFactor + (gamesWon + gamesLost) * Ravg + (gamesWon - gamesLost) * 400) / gamesPlayed + (gamesWon + gamesLost);
+
+            double newRank = (gamesPlayed * assFactor + (gamesWon + gamesLost) * Ravg + (gamesWon - gamesLost) * 400) / gamesPlayed + (gamesWon - gamesLost);
+            legacyFactor.add(newRank);
             assFactor = newRank;
+            //System.out.println("Uncalibrated ratings adjustment: " + newRank);
         }
 
         this.gamesWon = 0;
@@ -129,11 +133,13 @@ public class Player {
 
     public void printLegacyFactor() {
 
-        System.out.print(name + ": ");
+        System.out.print(name + ",");
 
         for (double rank : this.legacyFactor) {
-            System.out.print(rank + ", ");
+            System.out.print(rank + ",");
         }
+
+        System.out.print("\n");
     }
 
 
