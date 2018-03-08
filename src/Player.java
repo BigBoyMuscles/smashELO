@@ -6,9 +6,11 @@ public class Player {
 
     private String name;
     private double assFactor;
-    private int totalGamesPlayed;
     private int gamesWon;
     private int gamesLost;
+    private int totalGamesPlayed;
+    private int totalGamesWon;
+    private int totalGamesLost;
     private double bestRank;
     private double publishedRank;
     ArrayList<Double> opponentAssFactor;
@@ -20,6 +22,8 @@ public class Player {
         totalGamesPlayed = 0;
         gamesWon = 0;
         gamesLost = 0;
+        totalGamesLost = 0;
+        totalGamesWon = 0;
         bestRank = assFactor;
         opponentAssFactor = new ArrayList<Double>();
         legacyAssFactor = new ArrayList<Double>();
@@ -54,11 +58,13 @@ public class Player {
 
     public void gameWon() {
         this.totalGamesPlayed += 1;
+        this.totalGamesWon += 1;
         this.gamesWon += 1;
     }
 
     public void gameLost() {
         this.totalGamesPlayed += 1;
+        this.totalGamesLost += 1;
         this.gamesLost += 1;
     }
 
@@ -73,7 +79,7 @@ public class Player {
     public void calculateInitialRating() {
         // To be called at the end of a tournament if a player has fewer than 25 games played;
 
-      //  if(totalGamesPlayed <= 25) {
+        if(totalGamesPlayed <= 25) {
             // Should be called once for each provisional player, at the end of a tournament;
 
             double averageOpponentRank = 0;
@@ -92,7 +98,7 @@ public class Player {
 
             assFactor = initialRating;
         }
-   // }
+    }
 
     public void calculateStandardRating() {
 
@@ -104,7 +110,7 @@ public class Player {
         double Nr = 50;
 
         if(publishedRank < 2200) {
-            Nr = 50 / Math.sqrt(1 + Math.pow((2200 - publishedRank),2) / 100000);
+            Nr = 50 / Math.sqrt(1 + Math.pow((920 - publishedRank),2) / 100000);
         }
 
         double effectiveGames = totalGamesPlayed;
@@ -122,7 +128,6 @@ public class Player {
         }
 
         double k = 800 /(effectiveGames + (gamesWon + gamesLost));
-
         double bonus = 0;
 
         if(gamesWon + gamesLost > 3) {
@@ -189,6 +194,7 @@ public class Player {
         for(double d : legacyAssFactor) {
             System.out.print("," + d);
         }
+        System.out.print("," + totalGamesPlayed + "," + totalGamesWon + "," + totalGamesLost);
         System.out.print("\n");
     }
 

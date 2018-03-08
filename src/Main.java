@@ -326,11 +326,11 @@ public class Main {
         teamMatch(JacobC, AndrewM, Jeremiah, Ian);
 
         finishTournament(players);
-        //legacyAssFactorSummary(players);
+        legacyAssFactorSummary(players);
 
-        for(Player p : players) {
+/*        for(Player p : players) {
             p.printGamesPlayed();
-        }
+        }*/
 
         try {
             System.in.read();
@@ -348,11 +348,11 @@ public class Main {
 
 
 
-        if(loser.isProvisional()){
+/*        if(loser.isProvisional()){
             loser.calculateInitialRating();
         } else {
             loser.calculateStandardRating();
-        }
+        }*/
     }
 
     private static void finishTournament(ArrayList<Player> players) {
@@ -370,6 +370,7 @@ public class Main {
     }
 
     private static void legacyAssFactorSummary(ArrayList<Player> players) {
+        System.out.print("Name,SMA1,SMA3,SMA4D,SMA4S,SMA5,SMA6,TotalGames,TotalWins,TotalLosses\n");
         for (Player p : players) {
             p.printLegacyAssFactor();
         }
@@ -381,21 +382,24 @@ public class Main {
         l1.gameLost();
         l2.gameLost();
 
-        l1.keepOpponentRating(w1.getPublishedAssFactor());
-        l1.keepOpponentRating(w2.getPublishedAssFactor());
-        l2.keepOpponentRating(w1.getPublishedAssFactor());
-        l2.keepOpponentRating(w2.getPublishedAssFactor());
+        double winnerAvgAssFactor = (w1.getPublishedAssFactor() + w2.getPublishedAssFactor()) / 2;
+        double loserAvgAssFactor = (l1.getPublishedAssFactor() + l2.getPublishedAssFactor()) / 2;
+
+        l1.keepOpponentRating(winnerAvgAssFactor);
+        //l1.keepOpponentRating(w2.getPublishedAssFactor());
+        l2.keepOpponentRating(winnerAvgAssFactor);
+        //l2.keepOpponentRating(w2.getPublishedAssFactor());
 
 
-        w1.keepOpponentRating(l1.getPublishedAssFactor());
-        w1.keepOpponentRating(l2.getPublishedAssFactor());
-        w2.keepOpponentRating(l1.getPublishedAssFactor());
-        w2.keepOpponentRating(l2.getPublishedAssFactor());
+        w1.keepOpponentRating(loserAvgAssFactor);
+        //w1.keepOpponentRating(l2.getPublishedAssFactor());
+        w2.keepOpponentRating(loserAvgAssFactor);
+        //w2.keepOpponentRating(l2.getPublishedAssFactor());
 
 
 
 
-        if(l1.isProvisional()){
+/*        if(l1.isProvisional()){
             l1.calculateInitialRating();
         } else {
             l1.calculateStandardRating();
@@ -411,6 +415,6 @@ public class Main {
             w1.calculateInitialRating();
         } else {
             w1.calculateStandardRating();
-        }
+        }*/
     }
 }
