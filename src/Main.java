@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Main {
 
@@ -69,14 +70,71 @@ public class Main {
         Player Zach = new Player("Zach");
 
 
+        ArrayList<Player> players = new ArrayList<Player>();
+        players.add(Abby);
+        players.add(Adam);
+        players.add(AJ);
+        players.add(Alex);
+        players.add(AndrewC);
+        players.add(AndrewM);
+        players.add(Ashten);
+        players.add(Bam);
+        players.add(Billy);
+        players.add(Blake);
+        players.add(Brad);
+        players.add(Brandon);
+        players.add(Britney);
+        players.add(Carly);
+        players.add(Cary);
+        players.add(Chester);
+        players.add(Christian);
+        players.add(Cody);
+        players.add(Cole);
+        players.add(Colin);
+        players.add(Conor);
+        players.add(Cooper);
+        players.add(Danny);
+        players.add(Doug);
+        players.add(Emma);
+        players.add(Eric);
+        players.add(Evan);
+        players.add(Gabby);
+        players.add(Gabe);
+        players.add(Grant);
+        players.add(GrantJ);
+        players.add(Hakeem);
+        players.add(Hayley);
+        players.add(Hunter);
+        players.add(Ian);
+        players.add(JacobC);
+        players.add(JacobF);
+        players.add(James);
+        players.add(Jeremiah);
+        players.add(Joel);
+        players.add(Justin);
+        players.add(Kaitlyn);
+        players.add(Kolby);
+        players.add(Mason);
+        players.add(Megan);
+        players.add(NathanM);
+        players.add(NathanW);
+        players.add(Nick);
+        players.add(Noah);
+        players.add(Rob);
+        players.add(Sam);
+        players.add(Scott);
+        players.add(Sherene);
+        players.add(Steve);
+        players.add(Steven);
+        players.add(Tabitha);
+        players.add(Turner);
+        players.add(Tyler);
+        players.add(Vince);
+        players.add(VincentT);
+        players.add(Wesley);
+        players.add(Zach);
 
-        double Ravg = 0;
-
-        Ravg = (Brad.getAssFactor() + Cary.getAssFactor() + JacobF.getAssFactor() + Gabby.getAssFactor() + Danny.getAssFactor() +
-                Sherene.getAssFactor() + Scott.getAssFactor() + NathanM.getAssFactor() + Carly.getAssFactor() + AndrewC.getAssFactor() +
-                Noah.getAssFactor() + Blake.getAssFactor() + Jeremiah.getAssFactor()) / 13;
-
-                //SMA1
+        //SMA1
         match(Brad, Cary);
         match(JacobF, Gabby);
         match(Danny, Sherene);
@@ -97,224 +155,75 @@ public class Main {
         match(Blake, Jeremiah);
         match(Noah, Blake);
 
-        Brad.resetTournament(Ravg);
-        Cary.resetTournament(Ravg);
-        JacobF.resetTournament(Ravg);
-        Gabby.resetTournament(Ravg);
-        Danny.resetTournament(Ravg);
-        Sherene.resetTournament(Ravg);
-        Scott.resetTournament(Ravg);
-        NathanM.resetTournament(Ravg);
-        Carly.resetTournament(Ravg);
-        AndrewC.resetTournament(Ravg);
-        Noah.resetTournament(Ravg);
-        Blake.resetTournament(Ravg);
-        Jeremiah.resetTournament(Ravg);
+        finishTournament(players);
 
-        System.out.println("###### SMASH MY ASS 1 ######");
-        System.out.println(Brad.getName() + ": " + Brad.getAssFactor());
-        System.out.println(Cary.getName() + ": " + Cary.getAssFactor());
-        System.out.println(JacobF.getName() + ": " + JacobF.getAssFactor());
-        System.out.println(Gabby.getName() + ": " + Gabby.getAssFactor());
-        System.out.println(Danny.getName() + ": " + Danny.getAssFactor());
-        System.out.println(Sherene.getName() + ": " + Sherene.getAssFactor());
-        System.out.println(Scott.getName() + ": " + Scott.getAssFactor());
-        System.out.println(NathanM.getName() + ": " + NathanM.getAssFactor());
-        System.out.println(Carly.getName() + ": " + Carly.getAssFactor());
-        System.out.println(AndrewC.getName() + ": " + AndrewC.getAssFactor());
-        System.out.println(Noah.getName() + ": " + Noah.getAssFactor());
-        System.out.println(Blake.getName() + ": " + Blake.getAssFactor());
-        System.out.println(Jeremiah.getName() + ": " + Jeremiah.getAssFactor());
+        //SMA3
+        teamMatch(Zach, Joel, Mason, Chester);
+        teamMatch(Brad, Ian, Conor, Britney);
+        teamMatch(NathanM, Carly, Vince, Cody);
+        teamMatch(Steven, Kaitlyn, NathanW, Evan);
+        teamMatch(Turner, Megan, Tabitha, Emma);
+        teamMatch(Conor, Britney, Vince, Cody);
+        teamMatch(Noah, Sherene, Zach, Joel);
+        teamMatch(Brad, Ian, NathanM, Carly);
+        teamMatch(JacobF, Cary, Steven, Kaitlyn);
+        teamMatch(Jeremiah, Scott, Turner, Megan);
+        teamMatch(Zach, Joel, Tabitha, Emma);
+        teamMatch(NathanM, Carly, NathanW, Evan);
+        teamMatch(Steven, Kaitlyn, Conor, Britney);
+        teamMatch(Turner, Megan, Mason, Chester);
+        teamMatch(Zach, Joel, NathanM, Carly);
+        teamMatch(Turner, Megan, Steven, Kaitlyn);
+        teamMatch(Brad, Ian, Noah, Sherene);
+        teamMatch(Jeremiah, Scott, JacobF, Cary);
+        teamMatch(Noah, Sherene, Turner, Megan);
+        teamMatch(JacobF, Cary, Zach, Joel);
+        teamMatch(JacobF, Cary, Noah, Sherene);
+        teamMatch(Brad, Ian, Jeremiah, Scott);
+        teamMatch(Jeremiah, Scott, JacobF, Cary);
+        teamMatch(Jeremiah, Scott, Brad, Ian);
+        teamMatch(Jeremiah, Scott, Brad, Ian);
 
-        //Smash My Ass 3
-        Team zachJoel = new Team(Zach, Joel);
-        Team masChest = new Team(Mason, Chester);
-        Team bradIan = new Team(Brad, Ian);
-        Team conBrit = new Team(Conor, Britney);
-        Team natMCar = new Team(NathanM, Carly);
-        Team vinceCody = new Team(Vince, Cody);
-        Team natWEvan = new Team(NathanW, Evan);
-        Team stevenKait = new Team(Steven, Kaitlyn);
-        Team turnMeg = new Team(Turner, Megan);
-        Team tabiEmma = new Team(Tabitha, Emma);
-        Team noahShere = new Team(Noah, Sherene);
-        Team jacFCary = new Team(JacobF, Cary);
-        Team jeremScott = new Team(Jeremiah, Scott);
+        finishTournament(players);
 
-        Ravg = (zachJoel.getAssFactor() + masChest.getAssFactor() + bradIan.getAssFactor() + conBrit.getAssFactor() +
-            natMCar.getAssFactor() + vinceCody.getAssFactor() + natWEvan.getAssFactor() + stevenKait.getAssFactor() +
-            turnMeg.getAssFactor() + tabiEmma.getAssFactor() + noahShere.getAssFactor() + jacFCary.getAssFactor() +
-            jeremScott.getAssFactor()) / 13;
+        //SMA4 Doubles
+        teamMatch(Cooper, Gabby, Billy, Mason);
+        teamMatch(Adam, Tyler, Tabitha, Emma);
+        teamMatch(Christian, Colin, John, Wesley);
+        teamMatch(Noah, Sherene, JacobF, Hunter);
+        teamMatch(Brandon, Nick, Zach, Megan);
+        teamMatch(Doug, James, Gabe, Cary);
+        teamMatch(Brad, Ian, NathanM, Carly);
+        teamMatch(Jeremiah, Joel, Danny, AndrewC);
+        teamMatch(Blake, Turner, Cooper, Gabby);
+        teamMatch(Sam, Scott, Adam, Tyler);
+        teamMatch(JacobC, VincentT, Christian, Colin);
+        teamMatch(JacobF, Hunter, John, Wesley);
+        teamMatch(Gabe, Cary, Tabitha, Emma);
+        teamMatch(Danny, AndrewC, Billy, Mason);
+        teamMatch(NathanM, Carly, Adam, Tyler);
+        teamMatch(JacobF, Hunter, Cooper, Gabby);
+        teamMatch(Zach, Megan, Gabe, Cary);
+        teamMatch(Christian, Colin, Danny, AndrewC);
+        teamMatch(Doug, James, Brandon, Nick);
+        teamMatch(Noah, Sherene, Blake,Turner);
+        teamMatch(Sam, Scott, Brad, Ian);
+        teamMatch(JacobC, VincentT, Jeremiah, Joel);
+        teamMatch(Brandon, Nick, Christian, Colin);
+        teamMatch(NathanM, Carly, Blake, Turner);
+        teamMatch(JacobF, Hunter, Brad, Ian);
+        teamMatch(Jeremiah, Joel, Zach, Megan);
+        teamMatch(NathanM, Carly, Brandon, Nick);
+        teamMatch(JacobF, Hunter, Jeremiah, Joel);
+        teamMatch(Noah, Sherene, Doug, James);
+        teamMatch(Sam, Scott, JacobC, VincentT);
+        teamMatch(JacobF, Hunter, Doug, James);
+        teamMatch(JacobC, VincentT, NathanW, Carly);
+        teamMatch(JacobF, Hunter, JacobC, VincentT);
+        teamMatch(Noah, Sherene, Sam, Scott);
+        teamMatch(Noah, Sherene, JacobF, Hunter);
 
-        teamMatch(zachJoel, masChest);
-        teamMatch(bradIan, conBrit);
-        teamMatch(natMCar, vinceCody);
-        teamMatch(stevenKait, natWEvan);
-        teamMatch(turnMeg, tabiEmma);
-        teamMatch(conBrit, vinceCody);
-        teamMatch(noahShere, zachJoel);
-        teamMatch(bradIan, natMCar);
-        teamMatch(jacFCary, stevenKait);
-        teamMatch(jeremScott, turnMeg);
-        teamMatch(zachJoel, tabiEmma);
-        teamMatch(natMCar, natWEvan);
-        teamMatch(stevenKait,conBrit);
-        teamMatch(turnMeg, masChest);
-        teamMatch(zachJoel, natMCar);
-        teamMatch(turnMeg, stevenKait);
-        teamMatch(bradIan, noahShere);
-        teamMatch(jeremScott, jacFCary);
-        teamMatch(noahShere, turnMeg);
-        teamMatch(jacFCary, zachJoel);
-        teamMatch(jacFCary, noahShere);
-        teamMatch(bradIan, jeremScott);
-        teamMatch(jeremScott, jacFCary);
-        teamMatch(jeremScott, bradIan);
-        teamMatch(jeremScott, bradIan);
-
-        zachJoel.resetTournament(Ravg);
-        masChest.resetTournament(Ravg);
-        bradIan.resetTournament(Ravg);
-        conBrit.resetTournament(Ravg);
-        natMCar.resetTournament(Ravg);
-        vinceCody.resetTournament(Ravg);
-        stevenKait.resetTournament(Ravg);
-        natWEvan.resetTournament(Ravg);
-        turnMeg.resetTournament(Ravg);
-        tabiEmma.resetTournament(Ravg);
-        noahShere.resetTournament(Ravg);
-        jeremScott.resetTournament(Ravg);
-        jacFCary.resetTournament(Ravg);
-
-        System.out.println("\n");
-        System.out.println("###### SMASH MY ASS 3 ######");
-        System.out.println(Brad.getName() + ": " + Brad.getAssFactor());
-        System.out.println(Cary.getName() + ": " + Cary.getAssFactor());
-        System.out.println(JacobF.getName() + ": " + JacobF.getAssFactor());
-        System.out.println(Sherene.getName() + ": " + Sherene.getAssFactor());
-        System.out.println(Scott.getName() + ": " + Scott.getAssFactor());
-        System.out.println(NathanM.getName() + ": " + NathanM.getAssFactor());
-        System.out.println(Carly.getName() + ": " + Carly.getAssFactor());
-        System.out.println(Noah.getName() + ": " + Noah.getAssFactor());
-        System.out.println(Jeremiah.getName() + ": " + Jeremiah.getAssFactor());
-        System.out.println(Zach.getName() + ": " + Zach.getAssFactor());
-        System.out.println(Joel.getName() + ": " + Joel.getAssFactor());
-        System.out.println(Mason.getName() +  ": " + Mason.getAssFactor());
-        System.out.println((Chester.getName() + ": " + Chester.getAssFactor()));
-        System.out.println(Ian.getName() + ": " + Ian.getAssFactor() );
-        System.out.println(Conor.getName() + ": " + Conor.getAssFactor());
-        System.out.println((Britney.getName() + ": " + Britney.getAssFactor()));
-        System.out.println(Vince.getName() + ": " + Vince.getAssFactor());
-        System.out.println((Cody.getName() + ": " + Cody.getAssFactor()));
-        System.out.println(Steven.getName() + ": " + Steven.getAssFactor());
-        System.out.println(Kaitlyn.getName() + ": " + Kaitlyn.getAssFactor());
-        System.out.println(NathanW.getName() + ": " + NathanW.getAssFactor());
-        System.out.println(Evan.getName() + ": " + Evan.getAssFactor());
-        System.out.println(Turner.getName() + ": " + Turner.getAssFactor());
-        System.out.println(Megan.getName() + ": " + Megan.getAssFactor());
-        System.out.println(Tabitha.getName() + ": " + Tabitha.getAssFactor());
-        System.out.println(Emma.getName() + ": " + Emma.getAssFactor());
-
-
-        // SMASH MY ASS 4
-        Team coopGab = new Team(Cooper, Gabby);
-        Team billMas = new Team(Billy, Mason);
-        Team adamTy = new Team(Adam, Tyler);
-        Team johnWes = new Team(John, Wesley);
-        Team chrisCol = new Team(Christian, Colin);
-        Team blakeTurn = new Team(Blake, Turner);
-        Team jacFHunt = new Team(JacobF, Hunter);
-        Team brandNick = new Team(Brandon, Nick);
-        Team zachMeg = new Team(Zach, Megan);
-        Team dougJames = new Team(Doug, James);
-        Team gabeCary = new Team(Gabe, Cary);
-        Team samScott = new Team(Sam, Scott);
-        Team jacCVin = new Team(JacobC, VincentT);
-        Team danAndrew = new Team(Danny, AndrewC);
-        Team jeremJoel =  new Team(Jeremiah, Joel);
-
-        Ravg = (coopGab.getAssFactor() + billMas.getAssFactor() + adamTy.getAssFactor() + johnWes.getAssFactor() + chrisCol.getAssFactor() +
-                blakeTurn.getAssFactor() + jacFHunt.getAssFactor() + brandNick.getAssFactor() + zachMeg.getAssFactor() + dougJames.getAssFactor() +
-                gabeCary.getAssFactor() + samScott.getAssFactor() + jacCVin.getAssFactor() + danAndrew.getAssFactor() + jeremJoel.getAssFactor() +
-                noahShere.getAssFactor() + bradIan.getAssFactor() + natMCar.getAssFactor() + tabiEmma.getAssFactor()) / 19;
-
-        teamMatch(coopGab, billMas);
-        teamMatch(adamTy, tabiEmma);
-        teamMatch(chrisCol, johnWes);
-        teamMatch(noahShere, jacFHunt);
-        teamMatch(brandNick, zachMeg);
-        teamMatch(dougJames, gabeCary);
-        teamMatch(bradIan, natMCar);
-        teamMatch(jeremJoel, danAndrew);
-        teamMatch(blakeTurn, coopGab);
-        teamMatch(samScott, adamTy);
-        teamMatch(jacCVin, chrisCol);
-        teamMatch(jacFHunt, johnWes);
-        teamMatch(gabeCary, tabiEmma);
-        teamMatch(danAndrew, billMas);
-        teamMatch(natMCar, adamTy);
-        teamMatch(jacFHunt, coopGab);
-        teamMatch(zachMeg, gabeCary);
-        teamMatch(chrisCol, danAndrew);
-        teamMatch(dougJames, brandNick);
-        teamMatch(noahShere, blakeTurn);
-        teamMatch(samScott, bradIan);
-        teamMatch(jacCVin, jeremJoel);
-        teamMatch(brandNick, chrisCol);
-        teamMatch(natMCar, blakeTurn);
-        teamMatch(jacFHunt, bradIan);
-        teamMatch(jeremJoel, zachMeg);
-        teamMatch(natMCar, brandNick);
-        teamMatch(jacFHunt, jeremJoel);
-        teamMatch(noahShere, dougJames);
-        teamMatch(samScott, jacCVin);
-        teamMatch(jacFHunt, dougJames);
-        teamMatch(jacCVin, natMCar);
-        teamMatch(jacFHunt, jacCVin);
-        teamMatch(noahShere, samScott);
-        teamMatch(noahShere, jacFHunt);
-
-        coopGab.resetTournament(Ravg);
-        billMas.resetTournament(Ravg);
-        adamTy.resetTournament(Ravg);
-        johnWes.resetTournament(Ravg);
-        chrisCol.resetTournament(Ravg);
-        blakeTurn.resetTournament(Ravg);
-        jacFHunt.resetTournament(Ravg);
-        brandNick.resetTournament(Ravg);
-        zachMeg.resetTournament(Ravg);
-        dougJames.resetTournament(Ravg);
-        gabeCary.resetTournament(Ravg);
-        samScott.resetTournament(Ravg);
-        jacCVin.resetTournament(Ravg);
-        danAndrew.resetTournament(Ravg);
-        jeremJoel.resetTournament(Ravg);
-        noahShere.resetTournament(Ravg);
-        bradIan.resetTournament(Ravg);
-        natMCar.resetTournament(Ravg);
-        tabiEmma.resetTournament(Ravg);
-
-        System.out.println("\n");
-        System.out.println(("###### SMA4 DOUBLES ######"));
-        coopGab.print();
-        billMas.print();
-        adamTy.print();
-        johnWes.print();
-        chrisCol.print();
-        blakeTurn.print();
-        jacFHunt.print();
-        brandNick.print();
-        zachMeg.print();
-        dougJames.print();
-        gabeCary.print();
-        samScott.print();
-        jacCVin.print();
-        danAndrew.print();
-        jeremJoel.print();
-        noahShere.print();
-        bradIan.print();
-        natMCar.print();
-        tabiEmma.print();
+        finishTournament(players);
 
         //SMA4 Singles
         match(Colin, Scott);
@@ -345,409 +254,83 @@ public class Main {
         match(Blake, Doug);
         match(JacobF, Blake);
 
-        Ravg = (Colin.getAssFactor() + Scott.getAssFactor() + NathanM.getAssFactor() + Megan.getAssFactor() + Carly.getAssFactor() +
-                Billy.getAssFactor() + Hunter.getAssFactor() + Danny.getAssFactor() + Nick.getAssFactor() + Hayley.getAssFactor() +
-                Zach.getAssFactor() + Gabby.getAssFactor() + Wesley.getAssFactor() + John.getAssFactor() + Brad.getAssFactor() +
-                Tyler.getAssFactor() + Joel.getAssFactor() + Emma.getAssFactor() + Sherene.getAssFactor() + Cary.getAssFactor() +
-                JacobC.getAssFactor() + Mason.getAssFactor() + Blake.getAssFactor() + Mason.getAssFactor() + Brandon.getAssFactor() +
-                Turner.getAssFactor() + JacobF.getAssFactor() + James.getAssFactor()) / 28;
-
-        Carly.resetTournament(Ravg);
-        Colin.resetTournament(Ravg);
-        Scott.resetTournament(Ravg);
-        NathanM.resetTournament(Ravg);
-        Megan.resetTournament(Ravg);
-        Billy.resetTournament(Ravg);
-        Hunter.resetTournament(Ravg);
-        Danny.resetTournament(Ravg);
-        Nick.resetTournament(Ravg);
-        Hayley.resetTournament(Ravg);
-        Zach.resetTournament(Ravg);
-        Gabby.resetTournament(Ravg);
-        Wesley.resetTournament(Ravg);
-        John.resetTournament(Ravg);
-        Brad.resetTournament(Ravg);
-        Tyler.resetTournament(Ravg);
-        Joel.resetTournament(Ravg);
-        Emma.resetTournament(Ravg);
-        Sherene.resetTournament(Ravg);
-        Cary.resetTournament(Ravg);
-        JacobC.resetTournament(Ravg);
-        Mason.resetTournament(Ravg);
-        Turner.resetTournament(Ravg);
-        Brandon.resetTournament(Ravg);
-        James.resetTournament(Ravg);
-        Blake.resetTournament(Ravg);
-        Doug.resetTournament(Ravg);
-        JacobF.resetTournament(Ravg);
-
-
-        System.out.println("\n ###### SMA4 SINGLES ######");
-        Carly.printAssFactor();
-        Colin.printAssFactor();
-        Scott.printAssFactor();
-        NathanM.printAssFactor();
-        Megan.printAssFactor();
-        Billy.printAssFactor();
-        Hunter.printAssFactor();
-        Danny.printAssFactor();
-        Nick.printAssFactor();
-        Hayley.printAssFactor();
-        Zach.printAssFactor();
-        Gabby.printAssFactor();
-        Wesley.printAssFactor();
-        John.printAssFactor();
-        Brad.printAssFactor();
-        Tyler.printAssFactor();
-        Joel.printAssFactor();
-        Emma.printAssFactor();
-        Sherene.printAssFactor();
-        Cary.printAssFactor();
-        JacobC.printAssFactor();
-        Mason.printAssFactor();
-        Turner.printAssFactor();
-        Brandon.printAssFactor();
-        James.printAssFactor();
-        Blake.printAssFactor();
-        Doug.printAssFactor();
-        JacobF.printAssFactor();
-
         //SMA5
+        teamMatch(Jeremiah, Cary, NathanM, Carly);
+        teamMatch(JacobF, Emma, NathanW, Cole);
+        teamMatch(AJ, Turner, Mason, Tyler);
+        teamMatch(Blake, Hakeem, Rob, Colin);
+        teamMatch(Noah, Joel, Adam, Bam);
+        teamMatch(VincentT, Ian, Zach, Billy);
+        teamMatch(NathanW, Cole, Mason, Tyler);
+        teamMatch(Zach, Billy, Adam,Bam);
+        teamMatch(Jeremiah, Cary, Doug, James);
+        teamMatch(AJ, Turner, JacobF, Emma);
+        teamMatch(Brad, JacobC, Blake, Hakeem);
+        teamMatch(Noah, Joel, VincentT, Ian);
+        teamMatch(Doug, James, Zach, Billy);
+        teamMatch(JacobF, Emma, Rob, Colin);
+        teamMatch(Blake, Hakeem, NathanW, Cole);
+        teamMatch(VincentT, Ian, NathanM, Carly);
+        teamMatch(JacobF, Emma, Doug, James);
+        teamMatch(Blake, Hakeem, VincentT, Ian);
+        teamMatch(AJ, Turner, Jeremiah, Cary);
+        teamMatch(Brad, JacobC, Noah, Joel);
+        teamMatch(Blake, Hakeem, Jeremiah, Cary);
+        teamMatch(Noah, Joel, JacobF, Emma);
+        teamMatch(Noah, Joel, Blake, Hakeem);
+        teamMatch(AJ, Turner, Brad, JacobC);
+        teamMatch(Brad, JacobC, Noah, Joel);
+        teamMatch(Brad, JacobC, AJ, Turner);
+        teamMatch(AJ, Turner, Brad, JacobC);
 
-
-
-        // Team natMCar = new Team(NathanM, Carly);
-        Team jeremCary = new Team(Jeremiah,Cary);
-        Team jacFEmma = new Team(JacobF, Emma);
-        Team natWCole = new Team(NathanW, Cole);
-        Team ajTurner = new Team(AJ, Turner);
-        Team masTy = new Team(Mason, Tyler);
-        Team blakeHak = new Team(Blake, Hakeem);
-        Team robColin = new Team(Rob, Colin);
-        Team noahJoel = new Team(Noah, Joel);
-        Team adamBam = new Team(Adam, Bam);
-        Team vinTIan = new Team(VincentT, Ian);
-        Team zachBill = new Team(Zach, Billy);
-        //Team dougJames = new Team(Cooper, Gabby);
-        Team bradJacC = new Team(Brad, JacobC);
-
-        Ravg = (jeremCary.getAssFactor() + jacFEmma.getAssFactor() + natWCole.getAssFactor() + ajTurner.getAssFactor() +
-                masTy.getAssFactor() + blakeHak.getAssFactor() + robColin.getAssFactor() + noahJoel.getAssFactor() +
-                adamBam.getAssFactor() + vinTIan.getAssFactor() + zachBill.getAssFactor() + bradJacC.getAssFactor() +
-                dougJames.getAssFactor() + natMCar.getAssFactor()) / 14;
-
-        teamMatch(jeremCary, natMCar);
-        teamMatch(jacFEmma, natWCole);
-        teamMatch(ajTurner, masTy);
-        teamMatch(blakeHak, robColin);
-        teamMatch(noahJoel, adamBam);
-        teamMatch(vinTIan, zachBill);
-        teamMatch(natWCole, masTy);
-        teamMatch(zachBill, adamBam);
-        teamMatch(jeremCary, dougJames);
-        teamMatch(ajTurner, jacFEmma);
-        teamMatch(bradJacC, blakeHak);
-        teamMatch(noahJoel, vinTIan);
-        teamMatch(dougJames, zachBill);
-        teamMatch(jacFEmma, robColin);
-        teamMatch(blakeHak, natWCole);
-        teamMatch(vinTIan, natMCar);
-        teamMatch(jacFEmma, dougJames);
-        teamMatch(blakeHak, vinTIan);
-        teamMatch(ajTurner, jeremCary);
-        teamMatch(bradJacC, noahJoel);
-        teamMatch(blakeHak, jeremCary);
-        teamMatch(noahJoel, jacFEmma);
-        teamMatch(noahJoel, blakeHak);
-        teamMatch(ajTurner, bradJacC);
-        teamMatch(bradJacC, noahJoel);
-        teamMatch(bradJacC, ajTurner);
-        teamMatch(ajTurner, bradJacC);
-
-        jeremCary.resetTournament(Ravg);
-        natMCar.resetTournament(Ravg);
-        jacFEmma.resetTournament(Ravg);
-        natWCole.resetTournament(Ravg);
-        ajTurner.resetTournament(Ravg);
-        masTy.resetTournament(Ravg);
-        blakeHak.resetTournament(Ravg);
-        robColin.resetTournament(Ravg);
-        noahJoel.resetTournament(Ravg);
-        adamBam.resetTournament(Ravg);
-        vinTIan.resetTournament(Ravg);
-        zachBill.resetTournament(Ravg);
-        dougJames.resetTournament(Ravg);
-        bradJacC.resetTournament(Ravg);
-
-        System.out.println("\n ###### SMA5 ######");
-        jeremCary.print();
-        natMCar.print();
-        jacFEmma.print();
-        natWCole.print();
-        ajTurner.print();
-        masTy.print();
-        blakeHak.print();
-        robColin.print();
-        noahJoel.print();
-        adamBam.print();
-        vinTIan.print();
-        zachBill.print();
-        dougJames.print();
-        bradJacC.print();
-
+        finishTournament(players);
 
         //SMA6
-        Team caryAsh = new Team(Ashten,Cary);
-        //Team adamBam = new Team(Jeremiah,Cary);
-        //Team masTy = new Team(Jeremiah,Cary);
-        Team tabiJust = new Team(Tabitha, Justin);
-        Team steveJoel = new Team(Steve,Joel);
-        Team andCGrant = new Team(AndrewC, Grant);
-        Team kolbyNatM = new Team(Kolby, NathanM);
-        Team jacCAndM = new Team(JacobC, AndrewM);
-        //Team zachMeg = new Team(Zach, Megan);
-        Team turnNatW = new Team(Turner,NathanW);
-        Team bradVinT = new Team(Brad, VincentT);
-        Team scottShere = new Team(Scott, Sherene);
-        //Team robColin = new Team(Rob, Colin);
-        //Team jacFEmma = new Team(JacobF, Emma);
-        Team billNick = new Team(Billy, Nick);
-        Team blake = new Team(Blake,Blake);
-        Team jeremIan = new Team(Jeremiah, Ian);
-        Team chrisAbby = new Team(Christian, Abby);
-        Team dougGrantJ = new Team(Doug, GrantJ);
-        Team carlDan = new Team(Carly, Danny);
+        teamMatch(Adam,Bam, Cary,Ashten);
+        teamMatch(Mason, Tyler, Tabitha, Justin);
+        teamMatch(AndrewC, Grant, Steven, Joel);
+        teamMatch(Kolby, NathanM, Christian, Abby);
+        teamMatch(Turner, NathanW, Zach, Megan);
+        teamMatch(Scott, Sherene, Rob, Colin);
+        teamMatch(Billy, Nick, Blake, Blake);
+        teamMatch(Doug, GrantJ, Carly, Danny);
+        teamMatch(JacobC, AndrewM, Adam, Bam);
+        teamMatch(Brad, VincentT, Mason, Tyler);
+        teamMatch(AndrewC, Grant, JacobF, Emma);
+        teamMatch(Jeremiah, Ian, Kolby, NathanM);
+        teamMatch(Zach, Megan, Christian, Abby);
+        teamMatch(Rob, Colin, Steve, Joel);
+        teamMatch(Blake, Blake, Tabitha, Justin);
+        teamMatch(Carly, Danny, Cary, Ashten);
+        teamMatch(Adam, Bam, Zach, Megan);
+        teamMatch(Rob, Colin, Mason, Tyler);
+        teamMatch(JacobF, Emma, Blake, Blake);
+        teamMatch(Carly, Danny, Kolby, NathanM);
+        teamMatch(JacobC, AndrewM, Turner, NathanW);
+        teamMatch(Brad, VincentT, Scott, Sherene);
+        teamMatch(Billy, Nick, AndrewC, Grant);
+        teamMatch(Doug, GrantJ, Jeremiah, Ian);
+        teamMatch(Turner, NathanW, JacobF, Emma);
+        teamMatch(Carly,Danny, Scott, Sherene);
+        teamMatch(AndrewC, Grant, Adam, Bam);
+        teamMatch(Jeremiah, Ian, Rob, Colin);
+        teamMatch(Carly, Danny, Turner, NathanW);
+        teamMatch(Jeremiah, Ian, AndrewC, Grant);
+        teamMatch(JacobC, AndrewM, Brad, VincentT);
+        teamMatch(Doug, GrantJ, Billy, Nick);
+        teamMatch(Jeremiah, Ian, Brad, VincentT);
+        teamMatch(Billy, Nick, Carly, Danny);
+        teamMatch(Jeremiah, Ian, Billy, Nick);
+        teamMatch(JacobC, AndrewM, Doug, GrantJ);
+        teamMatch(Jeremiah, Ian, Doug, GrantJ);
+        teamMatch(JacobC, AndrewM, Jeremiah, Ian);
 
-        Ravg = (caryAsh.getAssFactor() +
-                adamBam.getAssFactor() +
-                masTy.getAssFactor() +
-                tabiJust.getAssFactor() +
-                steveJoel.getAssFactor() +
-                andCGrant.getAssFactor() +
-                kolbyNatM.getAssFactor() +
-                jacCAndM.getAssFactor() +
-                zachMeg.getAssFactor() +
-                turnNatW.getAssFactor() +
-                bradVinT.getAssFactor() +
-                scottShere.getAssFactor() +
-                robColin.getAssFactor() +
-                jacFEmma.getAssFactor() +
-                billNick.getAssFactor() +
-                blake.getAssFactor() +
-                jeremIan.getAssFactor() +
-                chrisAbby.getAssFactor() +
-                dougGrantJ.getAssFactor() +
-                carlDan.getAssFactor()) / 10;
+        finishTournament(players);
+        //legacyAssFactorSummary(players);
 
-        teamMatch(adamBam, caryAsh);
-        teamMatch(masTy, tabiJust);
-        teamMatch(andCGrant, steveJoel);
-        teamMatch(kolbyNatM, chrisAbby);
-        teamMatch(turnNatW, zachMeg);
-        teamMatch(scottShere, robColin);
-        teamMatch(billNick, blake);
-        teamMatch(dougGrantJ, carlDan);
-        teamMatch(jacCAndM, adamBam);
-        teamMatch(bradVinT, masTy);
-        teamMatch(andCGrant, jacFEmma);
-        teamMatch(jeremIan, kolbyNatM);
-        teamMatch(zachMeg, chrisAbby);
-        teamMatch(robColin, steveJoel);
-        teamMatch(blake, tabiJust);
-        teamMatch(carlDan, caryAsh);
-        teamMatch(adamBam, zachMeg);
-        teamMatch(robColin, masTy);
-        teamMatch(jacFEmma, blake);
-        teamMatch(carlDan, kolbyNatM);
-        teamMatch(jacCAndM, turnNatW);
-        teamMatch(bradVinT, scottShere);
-        teamMatch(billNick, andCGrant);
-        teamMatch(dougGrantJ, jeremIan);
-        teamMatch(turnNatW, jacFEmma);
-        teamMatch(carlDan, scottShere);
-        teamMatch(andCGrant, adamBam);
-        teamMatch(jeremIan, robColin);
-        teamMatch(carlDan, turnNatW);
-        teamMatch(jeremIan, andCGrant);
-        teamMatch(jacCAndM, bradVinT);
-        teamMatch(dougGrantJ, billNick);
-        teamMatch(jeremIan, bradVinT);
-        teamMatch(billNick, carlDan);
-        teamMatch(jeremIan, billNick);
-        teamMatch(jacCAndM, dougGrantJ);
-        teamMatch(jeremIan, dougGrantJ);
-        teamMatch(jacCAndM, jeremIan);
-
-        caryAsh.resetTournament(Ravg);
-        adamBam.resetTournament(Ravg);
-        masTy.resetTournament(Ravg);
-        tabiJust.resetTournament(Ravg);
-        steveJoel.resetTournament(Ravg);
-        andCGrant.resetTournament(Ravg);
-        kolbyNatM.resetTournament(Ravg);
-        jacCAndM.resetTournament(Ravg);
-        zachMeg.resetTournament(Ravg);
-        turnNatW.resetTournament(Ravg);
-        bradVinT.resetTournament(Ravg);
-        scottShere.resetTournament(Ravg);
-        robColin.resetTournament(Ravg);
-        jacFEmma.resetTournament(Ravg);
-        billNick.resetTournament(Ravg);
-        blake.resetTournament(Ravg);
-        jeremIan.resetTournament(Ravg);
-        chrisAbby.resetTournament(Ravg);
-        dougGrantJ.resetTournament(Ravg);
-        carlDan.resetTournament(Ravg);
-
-        System.out.println("\n###### SMA6 ######");
-        caryAsh.print();
-        adamBam.print();
-        masTy.print();
-        tabiJust.print();
-        steveJoel.print();
-        andCGrant.print();
-        kolbyNatM.print();
-        jacCAndM.print();
-        zachMeg.print();
-        turnNatW.print();
-        bradVinT.print();
-        scottShere.print();
-        robColin.print();
-        jacFEmma.print();
-        billNick.print();
-        blake.print();
-        jeremIan.print();
-        chrisAbby.print();
-        dougGrantJ.print();
-        carlDan.print();
-
-
-        Adam.printGames();
-        AJ.printGames();
-        Alex.printGames();
-        AndrewC.printGames();
-        AndrewM.printGames();
-        Ashten.printGames();
-        Bam.printGames();
-        Billy.printGames();
-        Blake.printGames();
-        Brad.printGames();
-        Brandon.printGames();
-        Britney.printGames();
-        Carly.printGames();
-        Cary.printGames();
-        Chester.printGames();
-        Christian.printGames();
-        Cody.printGames();
-        Cole.printGames();
-        Colin.printGames();
-        Conor.printGames();
-        Cooper.printGames();
-        Danny.printGames();
-        Doug.printGames();
-        Emma.printGames();
-        Eric.printGames();
-        Evan.printGames();
-        Gabby.printGames();
-        Gabe .printGames();
-        Grant.printGames();
-        GrantJ.printGames();
-        Hakeem.printGames();
-        Hayley.printGames();
-        Hunter.printGames();
-        Ian.printGames();
-        JacobF.printGames();
-        JacobC.printGames();
-        James.printGames();
-        Jeremiah.printGames();
-        Joel.printGames();
-        John.printGames();
-        Justin.printGames();
-        Kaitlyn.printGames();
-        Kolby.printGames();
-        Mason.printGames();
-        Megan.printGames();
-        NathanM.printGames();
-        NathanW.printGames();
-        Nick.printGames();
-        Noah.printGames();
-        Rob.printGames();
-        Sam.printGames();
-        Scott.printGames();
-        Sherene.printGames();
-        Steve.printGames();
-        Steven.printGames();
-        Tabitha.printGames();
-        Turner.printGames();
-        Tyler.printGames();
-        Vince.printGames();
-        VincentT.printGames();
-        Wesley.printGames();
-        Zach.printGames();
-
-        System.out.println("\n ###### SMA LEGACY RANKS ######");
-        Adam.printLegacyFactor();
-        AJ.printLegacyFactor();
-        Alex.printLegacyFactor();
-        AndrewC.printLegacyFactor();
-        AndrewM.printLegacyFactor();
-        Ashten.printLegacyFactor();
-        Bam.printLegacyFactor();
-        Billy.printLegacyFactor();
-        Blake.printLegacyFactor();
-        Brad.printLegacyFactor();
-        Brandon.printLegacyFactor();
-        Britney.printLegacyFactor();
-        Carly.printLegacyFactor();
-        Cary.printLegacyFactor();
-        Chester.printLegacyFactor();
-        Christian.printLegacyFactor();
-        Cody.printLegacyFactor();
-        Cole.printLegacyFactor();
-        Colin.printLegacyFactor();
-        Conor.printLegacyFactor();
-        Cooper.printLegacyFactor();
-        Danny.printLegacyFactor();
-        Doug.printLegacyFactor();
-        Emma.printLegacyFactor();
-        Eric.printLegacyFactor();
-        Evan.printLegacyFactor();
-        Gabby.printLegacyFactor();
-        Gabe .printLegacyFactor();
-        Grant.printLegacyFactor();
-        GrantJ.printLegacyFactor();
-        Hakeem.printLegacyFactor();
-        Hayley.printLegacyFactor();
-        Hunter.printLegacyFactor();
-        Ian.printLegacyFactor();
-        JacobF.printLegacyFactor();
-        JacobC.printLegacyFactor();
-        James.printLegacyFactor();
-        Jeremiah.printLegacyFactor();
-        Joel.printLegacyFactor();
-        John.printLegacyFactor();
-        Justin.printLegacyFactor();
-        Kaitlyn.printLegacyFactor();
-        Kolby.printLegacyFactor();
-        Mason.printLegacyFactor();
-        Megan.printLegacyFactor();
-        NathanM.printLegacyFactor();
-        NathanW.printLegacyFactor();
-        Nick.printLegacyFactor();
-        Noah.printLegacyFactor();
-        Rob.printLegacyFactor();
-        Sam.printLegacyFactor();
-        Scott.printLegacyFactor();
-        Sherene.printLegacyFactor();
-        Steve.printLegacyFactor();
-        Steven.printLegacyFactor();
-        Tabitha.printLegacyFactor();
-        Turner.printLegacyFactor();
-        Tyler.printLegacyFactor();
-        Vince.printLegacyFactor();
-        VincentT.printLegacyFactor();
-        Wesley.printLegacyFactor();
-        Zach.printLegacyFactor();
+        for(Player p : players) {
+            p.printGamesPlayed();
+        }
 
         try {
             System.in.read();
@@ -760,21 +343,74 @@ public class Main {
         winner.gameWon();
         loser.gameLost();
 
-        double lAF = loser.getAssFactor();
-        double wAF = winner.getAssFactor();
+        loser.keepOpponentRating(winner.getPublishedAssFactor());
+        winner.keepOpponentRating(loser.getPublishedAssFactor());
 
-        loser.updateRating(wAF);
-        winner.updateRating(lAF);
+
+
+        if(loser.isProvisional()){
+            loser.calculateInitialRating();
+        } else {
+            loser.calculateStandardRating();
+        }
     }
 
-    private static void teamMatch(Team winner, Team loser) {
-        winner.gameWon();
-        loser.gameLost();
+    private static void finishTournament(ArrayList<Player> players) {
+        for (Player p : players) {
+            if(p.getGamesWon() > 0 || p.getGamesLost() > 0) {
+                if (p.isProvisional()) {
+                    p.calculateInitialRating();
+                } else {
+                    p.calculateInitialRating();
+                }
+            }
 
-        double lAF = loser.getAssFactor();
-        double wAF = winner.getAssFactor();
+            p.resetTournament();
+        }
+    }
 
-        loser.updateRating(wAF);
-        winner.updateRating(lAF);
+    private static void legacyAssFactorSummary(ArrayList<Player> players) {
+        for (Player p : players) {
+            p.printLegacyAssFactor();
+        }
+    }
+
+    private static void teamMatch(Player w1, Player w2, Player l1, Player l2) {
+        w1.gameWon();
+        w2.gameWon();
+        l1.gameLost();
+        l2.gameLost();
+
+        l1.keepOpponentRating(w1.getPublishedAssFactor());
+        l1.keepOpponentRating(w2.getPublishedAssFactor());
+        l2.keepOpponentRating(w1.getPublishedAssFactor());
+        l2.keepOpponentRating(w2.getPublishedAssFactor());
+
+
+        w1.keepOpponentRating(l1.getPublishedAssFactor());
+        w1.keepOpponentRating(l2.getPublishedAssFactor());
+        w2.keepOpponentRating(l1.getPublishedAssFactor());
+        w2.keepOpponentRating(l2.getPublishedAssFactor());
+
+
+
+
+        if(l1.isProvisional()){
+            l1.calculateInitialRating();
+        } else {
+            l1.calculateStandardRating();
+        }
+
+        if(l2.isProvisional()){
+            l2.calculateInitialRating();
+        } else {
+            l2.calculateStandardRating();
+        }
+
+        if(w1.isProvisional()){
+            w1.calculateInitialRating();
+        } else {
+            w1.calculateStandardRating();
+        }
     }
 }

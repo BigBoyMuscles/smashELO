@@ -30,8 +30,8 @@ public class Team {
     }
 
     public void updateRating(double Ropp) {
-        member1.updateRating(Ropp);
-        member2.updateRating(Ropp);
+   /*     member1.updateRating(Ropp);
+        member2.updateRating(Ropp);*/
     }
 
     public double getAssFactor() {
@@ -39,8 +39,8 @@ public class Team {
     }
 
     public void resetTournament(double Ravg) {
-        member1.resetTournament(Ravg);
-        member2.resetTournament(Ravg);
+       /* member1.resetTournament(Ravg);
+        member2.resetTournament(Ravg);*/
     }
 
     public void print() {
