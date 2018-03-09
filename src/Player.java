@@ -100,8 +100,11 @@ public class Player {
         }
     }
 
+    //NOT CURRENTLY USED AT ALL!
+    //USAGE CAUSES WILD JUMPS INTO NEGATIVE RANKS!
+    //WILL MOST LIKELY REMOVE SINCE PROVISIONAL RANKING SEEMS TO SATISFY OUR NEEDS ON ITS OWN
     public void calculateStandardRating() {
-
+        
         //To be called at the end of a tournament. Gathers the ratings of all opponents played during a tournament, and
         //Calculates an updated rating. Currently published ratings are updated every tournament.
 
@@ -109,8 +112,8 @@ public class Player {
 
         double Nr = 50;
 
-        if(publishedRank < 2200) {
-            Nr = 50 / Math.sqrt(1 + Math.pow((920 - publishedRank),2) / 100000);
+        if(publishedRank < 900) {
+            Nr = 50 / Math.sqrt(1 + Math.pow((900 - publishedRank),2) / 100000);
         }
 
         double effectiveGames = totalGamesPlayed;
@@ -118,7 +121,7 @@ public class Player {
         if(totalGamesPlayed > Nr) {
             effectiveGames = Nr;
         }
-
+        
         double winExpectancy =0;
         for(double Ropp : opponentAssFactor) {
 
