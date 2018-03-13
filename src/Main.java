@@ -92,7 +92,10 @@ public class Main {
         players.add(Cody);
         players.add(Cole);
         players.add(Colin);
+<<<<<<< HEAD
         players.add(Colton);
+=======
+>>>>>>> 6b29f9ebafba50f0be91f8511cb8e71c7c5e398d
         players.add(Conor);
         players.add(Cooper);
         players.add(Danny);
@@ -157,7 +160,11 @@ public class Main {
         match(Blake, Jeremiah);
         match(Noah, Blake);
 
+<<<<<<< HEAD
         finishTournament(players, true);
+=======
+        finishTournament(players);
+>>>>>>> 6b29f9ebafba50f0be91f8511cb8e71c7c5e398d
 
         //SMA3
         teamMatch(Zach, Joel, Mason, Chester);
@@ -186,7 +193,11 @@ public class Main {
         teamMatch(Jeremiah, Scott, Brad, Ian);
         teamMatch(Jeremiah, Scott, Brad, Ian);
 
+<<<<<<< HEAD
         finishTournament(players, false);
+=======
+        finishTournament(players);
+>>>>>>> 6b29f9ebafba50f0be91f8511cb8e71c7c5e398d
 
         //SMA4 Doubles
         teamMatch(Cooper, Gabby, Billy, Mason);
@@ -225,7 +236,11 @@ public class Main {
         teamMatch(Noah, Sherene, Sam, Scott);
         teamMatch(Noah, Sherene, JacobF, Hunter);
 
+<<<<<<< HEAD
         finishTournament(players, false);
+=======
+        finishTournament(players);
+>>>>>>> 6b29f9ebafba50f0be91f8511cb8e71c7c5e398d
 
         //SMA4 Singles
         match(Colin, Scott);
@@ -256,8 +271,11 @@ public class Main {
         match(Blake, Doug);
         match(JacobF, Blake);
 
+<<<<<<< HEAD
         finishTournament(players, true);
 
+=======
+>>>>>>> 6b29f9ebafba50f0be91f8511cb8e71c7c5e398d
         //SMA5
         teamMatch(Jeremiah, Cary, NathanM, Carly);
         teamMatch(JacobF, Emma, NathanW, Cole);
@@ -287,6 +305,7 @@ public class Main {
         teamMatch(Brad, JacobC, AJ, Turner);
         teamMatch(AJ, Turner, Brad, JacobC);
 
+<<<<<<< HEAD
         finishTournament(players, false);
 
         //SMA6
@@ -371,6 +390,56 @@ public class Main {
         for(Player p : players) {
             p.printLegacyAssFactor();
         }
+=======
+        finishTournament(players);
+
+        //SMA6
+        teamMatch(Adam,Bam, Cary,Ashten);
+        teamMatch(Mason, Tyler, Tabitha, Justin);
+        teamMatch(AndrewC, Grant, Steven, Joel);
+        teamMatch(Kolby, NathanM, Christian, Abby);
+        teamMatch(Turner, NathanW, Zach, Megan);
+        teamMatch(Scott, Sherene, Rob, Colin);
+        teamMatch(Billy, Nick, Blake, Blake);
+        teamMatch(Doug, GrantJ, Carly, Danny);
+        teamMatch(JacobC, AndrewM, Adam, Bam);
+        teamMatch(Brad, VincentT, Mason, Tyler);
+        teamMatch(AndrewC, Grant, JacobF, Emma);
+        teamMatch(Jeremiah, Ian, Kolby, NathanM);
+        teamMatch(Zach, Megan, Christian, Abby);
+        teamMatch(Rob, Colin, Steve, Joel);
+        teamMatch(Blake, Blake, Tabitha, Justin);
+        teamMatch(Carly, Danny, Cary, Ashten);
+        teamMatch(Adam, Bam, Zach, Megan);
+        teamMatch(Rob, Colin, Mason, Tyler);
+        teamMatch(JacobF, Emma, Blake, Blake);
+        teamMatch(Carly, Danny, Kolby, NathanM);
+        teamMatch(JacobC, AndrewM, Turner, NathanW);
+        teamMatch(Brad, VincentT, Scott, Sherene);
+        teamMatch(Billy, Nick, AndrewC, Grant);
+        teamMatch(Doug, GrantJ, Jeremiah, Ian);
+        teamMatch(Turner, NathanW, JacobF, Emma);
+        teamMatch(Carly,Danny, Scott, Sherene);
+        teamMatch(AndrewC, Grant, Adam, Bam);
+        teamMatch(Jeremiah, Ian, Rob, Colin);
+        teamMatch(Carly, Danny, Turner, NathanW);
+        teamMatch(Jeremiah, Ian, AndrewC, Grant);
+        teamMatch(JacobC, AndrewM, Brad, VincentT);
+        teamMatch(Doug, GrantJ, Billy, Nick);
+        teamMatch(Jeremiah, Ian, Brad, VincentT);
+        teamMatch(Billy, Nick, Carly, Danny);
+        teamMatch(Jeremiah, Ian, Billy, Nick);
+        teamMatch(JacobC, AndrewM, Doug, GrantJ);
+        teamMatch(Jeremiah, Ian, Doug, GrantJ);
+        teamMatch(JacobC, AndrewM, Jeremiah, Ian);
+
+        finishTournament(players);
+        legacyAssFactorSummary(players);
+
+/*        for(Player p : players) {
+            p.printGamesPlayed();
+        }*/
+>>>>>>> 6b29f9ebafba50f0be91f8511cb8e71c7c5e398d
 
         try {
             System.in.read();
@@ -407,6 +476,7 @@ public class Main {
             p.resetTournament();
         }
 
+<<<<<<< HEAD
     }
 
     private static void legacyAssFactorSummary(ArrayList<Player> players) {
@@ -431,5 +501,80 @@ public class Main {
         w1.keepOpponentRating(l2.getPublishedAssFactor());
         w2.keepOpponentRating(l1.getPublishedAssFactor());
         w2.keepOpponentRating(l2.getPublishedAssFactor());
+=======
+        loser.keepOpponentRating(winner.getPublishedAssFactor());
+        winner.keepOpponentRating(loser.getPublishedAssFactor());
+
+
+
+/*        if(loser.isProvisional()){
+            loser.calculateInitialRating();
+        } else {
+            loser.calculateStandardRating();
+        }*/
+    }
+
+    private static void finishTournament(ArrayList<Player> players) {
+        for (Player p : players) {
+            if(p.getGamesWon() > 0 || p.getGamesLost() > 0) {
+                if (p.isProvisional()) {
+                    p.calculateInitialRating();
+                } else {
+                    p.calculateInitialRating();
+                }
+            }
+
+            p.resetTournament();
+        }
+    }
+
+    private static void legacyAssFactorSummary(ArrayList<Player> players) {
+        System.out.print("Name,SMA1,SMA3,SMA4D,SMA4S,SMA5,SMA6,TotalGames,TotalWins,TotalLosses\n");
+        for (Player p : players) {
+            p.printLegacyAssFactor();
+        }
+    }
+
+    private static void teamMatch(Player w1, Player w2, Player l1, Player l2) {
+        w1.gameWon();
+        w2.gameWon();
+        l1.gameLost();
+        l2.gameLost();
+
+        double winnerAvgAssFactor = (w1.getPublishedAssFactor() + w2.getPublishedAssFactor()) / 2;
+        double loserAvgAssFactor = (l1.getPublishedAssFactor() + l2.getPublishedAssFactor()) / 2;
+
+        l1.keepOpponentRating(winnerAvgAssFactor);
+        //l1.keepOpponentRating(w2.getPublishedAssFactor());
+        l2.keepOpponentRating(winnerAvgAssFactor);
+        //l2.keepOpponentRating(w2.getPublishedAssFactor());
+
+
+        w1.keepOpponentRating(loserAvgAssFactor);
+        //w1.keepOpponentRating(l2.getPublishedAssFactor());
+        w2.keepOpponentRating(loserAvgAssFactor);
+        //w2.keepOpponentRating(l2.getPublishedAssFactor());
+
+
+
+
+/*        if(l1.isProvisional()){
+            l1.calculateInitialRating();
+        } else {
+            l1.calculateStandardRating();
+        }
+
+        if(l2.isProvisional()){
+            l2.calculateInitialRating();
+        } else {
+            l2.calculateStandardRating();
+        }
+
+        if(w1.isProvisional()){
+            w1.calculateInitialRating();
+        } else {
+            w1.calculateStandardRating();
+        }*/
+>>>>>>> 6b29f9ebafba50f0be91f8511cb8e71c7c5e398d
     }
 }
